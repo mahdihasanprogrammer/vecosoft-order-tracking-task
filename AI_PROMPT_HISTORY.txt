@@ -59,3 +59,19 @@ Requirements:
 2. Whitespace & Text Sizing: Set `whitespace-nowrap`, reduce font size slightly (`text-xs` or `text-sm`), and adjust padding (`px-3 py-1.5`) so full button texts remain clearly visible.
 3. Clean Tab Labels: Keep text short and readable (e.g., "Normal", "Delayed", "Not Received", "Not Available").
 4. Active Indicator: Ensure active tab has clear focus styling, active background, and soft shadow without altering layout width.
+
+
+
+--------------------------------------------------
+PROMPT 4: Generating Comprehensive README.md Documentation
+--------------------------------------------------
+4. Generate a comprehensive, professional, and well-structured README.md file for Task 1 (Order Tracking System).
+
+Project Details to Include:
+1. Title & Overview: Order Tracking UI built with Next.js (App Router), TypeScript, Tailwind CSS, and react-icons. Mention that it is built mobile-first (max 430px) and centered for all screen sizes.
+2. Key Features: Highlight the interactive 4-state switcher (Normal, Delayed Order, Delivered but Not Received, Tracking Not Available), responsive vertical timeline, order summary breakdown, notice banners, and action support buttons.
+3. Clean Architecture: Mention strict TypeScript typing, modularized component structure (components under 200 lines each), isolated mock data layer, and dedicated type definitions.
+4. Folder Structure: Provide a ASCII folder tree showing src/app, src/components, src/data, and src/types.
+5. Setup Instructions: Include standard clone, `npm install`, and `npm run dev` commands.
+
+Ensure clean Markdown formatting with clear headings, badge styles, code blocks, and lists.
