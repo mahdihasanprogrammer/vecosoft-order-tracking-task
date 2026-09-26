@@ -1,0 +1,61 @@
+==================================================
+TASK 1: AI PROMPT HISTORY
+==================================================
+
+--------------------------------------------------
+PROMPT 1: Initial Order Tracking Component Setup
+--------------------------------------------------
+1. Build a mobile-first Order Tracking UI component in Next.js (TypeScript) + Tailwind CSS + react-icons. 
+
+Screen setup: Center-aligned mobile frame with max-width 430px on clean light background.
+
+Core Requirements:
+1. Header: Order ID (#ORD-8921), Status Badge, and Estimated Delivery (e.g., Today, 4:00 PM).
+2. Vertical Timeline Progress Bar: 4 stages (Processing, Shipped, Out for Delivery, Delivered) with active/completed icon states.
+3. Order Summary Card: Item thumbnail placeholder, product title, quantity, and total price.
+4. Action Buttons: 'Contact Support' and 'Report Issue' buttons.
+5. State Switcher Bar (Tabs/Dropdown at top) to instantly toggle between 4 view states:
+   a) Normal: Default tracking timeline.
+   b) Delayed Order: Alert banner ("Delayed due to weather"), updated ETA, and priority support link.
+   c) Delivered but Not Received: Warning banner ("Marked delivered?"), with "Claim Not Received" action modal/button.
+   d) Tracking Not Available: Friendly empty/initial state card with "Processing order details" message (no broken UI).
+6. Micro-interactions: Include simple React state toggles for modal or action feedback.
+
+Write clean, modular TSX code with dummy data for all states in a single component file.
+
+
+--------------------------------------------------
+PROMPT 2: Refactoring into Modular Architecture
+--------------------------------------------------
+2. Refactor and redesign the Task 1 Order Tracking Screen into a clean, modular React (TypeScript) architecture using Tailwind CSS and react-icons.
+
+Project Architecture & File Structure:
+1. types/tracking.ts: Define all TypeScript interfaces and type aliases (e.g., OrderStatus, OrderDetails, TimelineStep, ViewState).
+2. data/mockData.ts: Separate all mock data objects for all 4 states (Normal, Delayed, Delivered Not Received, Tracking Not Available) and export them with strict typing.
+3. components/ (Max ~150-200 lines per component):
+   - StateSwitcher.tsx: Top dropdown/tab controller to switch edge cases.
+   - Header.tsx: Order ID, status badge, estimated delivery time.
+   - Timeline.tsx: Visual vertical progress steps.
+   - OrderSummary.tsx: Product cards, pricing, and item summary.
+   - SupportActions.tsx: Contact support and report issue buttons with modal state.
+   - NoticeBanner.tsx: Dynamic alerts for Delayed, Delivered Not Received, or Not Available states.
+4. page.tsx: Main layout container assembling all components cleanly.
+
+UI & Layout Consistency Requirements:
+- Strictly ensure consistent width, padding, and margin (w-full, px-4, py-3, space-y-4) across all components so there are no misaligned borders or awkward gaps.
+- Mobile Frame: Center-aligned max-w-[430px] card with rounded-3xl shadow-2xl border on light background.
+- Design Aesthetic: Make it unique and modern—use glassmorphism details, subtle gradient accents, refined badges, micro-animations on interaction, and clean typography.
+
+Ensure 100% type safety and zero missing imports.
+
+
+--------------------------------------------------
+PROMPT 3: Fixing StateSwitcher Horizontal Scroll & Layout
+--------------------------------------------------
+3. Fix the StateSwitcher component issue where button texts are overflowing and truncated with ellipsis (...).
+
+Requirements:
+1. Enable Horizontal Scroll: Allow tab buttons to scroll horizontally on small screens without squeezing text using `overflow-x-auto no-scrollbar` or `flex-nowrap`.
+2. Whitespace & Text Sizing: Set `whitespace-nowrap`, reduce font size slightly (`text-xs` or `text-sm`), and adjust padding (`px-3 py-1.5`) so full button texts remain clearly visible.
+3. Clean Tab Labels: Keep text short and readable (e.g., "Normal", "Delayed", "Not Received", "Not Available").
+4. Active Indicator: Ensure active tab has clear focus styling, active background, and soft shadow without altering layout width.
